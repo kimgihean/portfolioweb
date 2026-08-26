@@ -1,0 +1,120 @@
+.projects-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0; /* removed horizontal padding to allow full width marquees */
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  height: 100vh; /* Explicitly define 100vh since it's a fullpage section */
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden; /* hide marquee edges */
+}
+
+.projects-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 2rem;
+  background: linear-gradient(120deg, #3b82f6, #06b6d4); /* Bright Blue to Cyan */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  align-self: center; /* Center the title to look better on fullpage */
+}
+
+.projects-swiper {
+  padding: 10px 10px 60px 10px !important; /* Extra padding for shadow and pagination */
+  overflow: visible !important; /* Allow peeking cards to be visible outside the container */
+}
+
+/* Swiper Pagination */
+.projects-swiper .swiper-pagination-bullet-active {
+  background: var(--accent-primary);
+  transform: scale(1.2);
+}
+
+/* --- Marquee Styles --- */
+.marquee-container {
+  position: absolute;
+  width: 100vw;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 10;
+  padding: 0.5rem 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.marquee-container.left {
+  top: 0;
+}
+
+.marquee-container.right {
+  bottom: 0;
+}
+
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  color: var(--text-tertiary);
+}
+
+.marquee-container.left .marquee-content {
+  animation: marquee-left 90s linear infinite;
+}
+
+.marquee-container.right .marquee-content {
+  animation: marquee-right 90s linear infinite;
+}
+
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Responsive constraints */
+@media (max-width: 992px) {
+  .projects-swiper .swiper-slide {
+    width: 95%; /* Make cards wider on mobile */
+  }
+
+  .marquee-container {
+    font-size: 0.65rem;
+    padding: 0.3rem 0;
+  }
+}
+
+.projects-swiper .swiper-slide {
+  width: 90%;
+  max-width: 1000px;
+  opacity: 0.4;
+  filter: blur(5px);
+  transition: opacity 0.6s ease, filter 0.6s ease;
+  pointer-events: none;
+}
+
+.projects-swiper .swiper-slide-active {
+  opacity: 1;
+  filter: blur(0);
+  pointer-events: auto;
+}

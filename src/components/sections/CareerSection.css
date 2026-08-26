@@ -1,0 +1,211 @@
+.career-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5%;
+  background: radial-gradient(circle at 70% 30%, #0d1e38 0%, #050810 80%);
+  color: #ffffff;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.resume-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  height: 85vh; /* Fits within 100vh */
+}
+
+/* Header */
+.resume-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.resume-name {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin: 0;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.resume-role {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #3b82f6; /* Blue accent */
+  text-transform: uppercase;
+}
+
+/* Grid Layout */
+.resume-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1.2fr;
+  gap: 2rem;
+  flex-grow: 1;
+  overflow-y: auto; /* Scroll if content overflows on small screens */
+  padding-bottom: 2rem;
+}
+
+/* Scrollbar for the grid */
+.resume-grid::-webkit-scrollbar {
+  width: 4px;
+}
+.resume-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+.resume-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+.resume-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-right: 2rem;
+}
+
+/* Dividers between columns */
+.resume-column.has-border {
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: 2rem;
+  padding-right: 0;
+}
+
+/* Profile Image */
+.resume-profile-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+}
+
+/* Sections inside columns */
+.resume-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-block-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  margin: 0 0 1.2rem 0;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.resume-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.resume-list:not(.no-bullet) li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.resume-list:not(.no-bullet) li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #3b82f6;
+}
+
+.resume-list li {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.resume-list .list-year {
+  white-space: nowrap;
+  color: #94a3b8;
+  font-weight: 500;
+  min-width: 70px;
+}
+
+.resume-list .list-text {
+  color: #e2e8f0;
+}
+
+.resume-list .list-label {
+  color: #94a3b8;
+  min-width: 60px;
+  display: inline-block;
+}
+
+.resume-list .list-label.bold {
+  font-weight: 600;
+  color: #e2e8f0;
+  min-width: 85px;
+}
+
+/* Responsive constraints */
+@media (max-width: 992px) {
+  .resume-container {
+    height: 90vh; /* Allow more height on mobile */
+    margin-top: 5vh;
+  }
+  
+  .resume-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    overflow-y: auto; /* Allow internal scrolling on mobile */
+    padding-bottom: 80px; /* Space for bottom GNB */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .resume-grid::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+  }
+  
+  .resume-column {
+    padding-right: 0;
+  }
+  
+  .resume-column.has-border {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-left: 0;
+    padding-top: 3rem;
+  }
+  
+  .resume-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,191 @@
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5%;
+  background: radial-gradient(circle at 50% 50%, #0a1128 0%, #03050a 100%);
+  color: #ffffff;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.skills-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.skills-header .section-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.skills-header .section-subtitle {
+  font-size: 1.1rem;
+  color: #94a3b8;
+}
+
+.architecture-container {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 2rem;
+  position: relative;
+}
+
+.arch-group {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Default */
+  padding: 3.5rem 1.5rem 1.5rem 1.5rem; /* Space for the absolute header */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.arch-group:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.aws-group-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.aws-group-header.mt-inner {
+  position: relative;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.aws-icon-box {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.aws-group-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* AWS Group Colors */
+.client-group { border-color: #8b5cf6; grid-column: 1 / 2; grid-row: 1 / 3; }
+.client-group .aws-icon-box { background-color: #8b5cf6; }
+.client-group .aws-group-title { color: #8b5cf6; }
+
+.edge-group { border-color: #f97316; grid-column: 2 / 3; grid-row: 1 / 3; }
+.edge-group .aws-icon-box { background-color: #f97316; }
+.edge-group .aws-group-title { color: #f97316; }
+
+.app-group { border-color: #22c55e; grid-column: 3 / 4; grid-row: 1 / 3; }
+.app-group .aws-icon-box { background-color: #22c55e; }
+.app-group .aws-group-title { color: #22c55e; }
+
+.db-group { border-color: #3b82f6; grid-column: 4 / 5; grid-row: 1 / 2; }
+.db-group .aws-icon-box { background-color: #3b82f6; }
+.db-group .aws-group-title { color: #3b82f6; }
+
+.cicd-group { border-color: #ec4899; grid-column: 4 / 5; grid-row: 2 / 3; }
+.cicd-group .aws-icon-box { background-color: #ec4899; }
+.cicd-group .aws-group-title { color: #ec4899; }
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.arch-nodes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.node {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #e2e8f0;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: default;
+}
+
+.node:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.node.primary {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.5);
+  color: #93c5fd;
+}
+
+.node.highlight {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #6ee7b7;
+}
+
+.node.db {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fcd34d;
+}
+
+.node.cache {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+}
+
+.node.tools {
+  background: rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #d8b4fe;
+}
+
+/* Responsive constraints */
+@media (max-width: 992px) {
+  .architecture-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    overflow-y: auto;
+    height: 75vh;
+    padding-bottom: 100px; /* Space for bottom GNB */
+    gap: 1.5rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .architecture-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .client-group, .edge-group, .app-group, .db-group, .cicd-group {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+}
