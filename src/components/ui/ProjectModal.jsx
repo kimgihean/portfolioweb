@@ -39,11 +39,7 @@ const ProjectModal = ({ project, onClose }) => {
         </button>
         
         <div className="modal-header">
-          {project.image && (
-            <div className="modal-image-wrapper">
-              <img src={project.image} alt={project.title} className="modal-image" />
-            </div>
-          )}
+
           <div className="modal-title-area">
             <h2 className="modal-title">{project.title}</h2>
             <p className="modal-role">{project.role} | {project.period}</p>
