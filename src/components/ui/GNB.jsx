@@ -30,7 +30,7 @@ const SkillsIcon = () => (
 );
 
 const GNB = ({ currentSection, onNavigate }) => {
-  const isDarkBg = currentSection === 1 || currentSection === 2; // Career and Skills are dark
+  const isDarkBg = currentSection === 1 || currentSection === 2 || currentSection === 3 || currentSection === 4; // Career and Skills are dark
 
   const navItems = [
     { name: 'HOME', icon: <HomeIcon />, index: 0 },

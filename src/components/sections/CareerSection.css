@@ -81,11 +81,19 @@
 /* Profile Image */
 .resume-profile-img {
   width: 100%;
+  /* max-width: 240px; */
   aspect-ratio: 1 / 1;
   border-radius: 12px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.resume-profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .img-placeholder {
@@ -172,6 +180,18 @@
   min-width: 85px;
 }
 
+.resume-list .list-label-project {
+  color: #94a3b8;
+  min-width: 30px;
+  display: inline-block;
+}
+
+.resume-list .list-label-project.bold {
+  font-weight: 600;
+  color: #e2e8f0;
+  min-width: 65px;
+}
+
 /* Responsive constraints */
 @media (max-width: 992px) {
   .resume-container {
@@ -208,4 +228,18 @@
     gap: 0.5rem;
     margin-bottom: 2rem;
   }
+}
+
+/* Link Styles */
+.resume-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+  text-underline-offset: 4px;
+  transition: all 0.2s ease;
+}
+
+.resume-link:hover {
+  color: #3b82f6;
+  text-decoration-color: #3b82f6;
 }

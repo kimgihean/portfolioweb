@@ -67,7 +67,7 @@ const HeroSection = () => {
           </div>
         </h1>
         <p className="hero-subtitle">
-          Node.js & AI Server Engineer. <br />RAG 파이프라인과 견고한 API 아키텍처로 비즈니스 문제를 해결합니다.
+          Spring Framework &nbsp;&nbsp;|&nbsp;&nbsp; Node.js &nbsp;&nbsp;|&nbsp;&nbsp; AI Server Engineer. <br />빠른 PoC 를 통한 실행 가능성 검증과 실제 운영 경험으로 비즈니스 문제를 해결합니다.
         </p>
         <div className="hero-buttons">
           <a href="#" target="_blank" rel="noopener noreferrer" className="hero-btn notion-btn">

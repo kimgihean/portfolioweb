@@ -5,8 +5,8 @@ const SkillsSection = () => {
   return (
     <section className="skills-section" id="skills">
       <div className="skills-header">
-        <h2 className="section-title">Architecture & Skills</h2>
-        <p className="section-subtitle">A high-level view of my technical ecosystem</p>
+        <h2 className="section-title">Skills & Architecture</h2>
+        <p className="section-subtitle">서비스 구축에 활용하는 기술 스택 및 아키텍처 구성도입니다.</p>
       </div>
       
       <div className="architecture-container allow-scroll">

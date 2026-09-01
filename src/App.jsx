@@ -3,15 +3,17 @@ import HeroSection from './components/sections/HeroSection';
 import CareerSection from './components/sections/CareerSection';
 import SkillsSection from './components/sections/SkillsSection';
 import ProjectList from './components/sections/ProjectList';
+import Footer from './components/ui/Footer';
 import GNB from './components/ui/GNB';
 
 function App() {
   const [currentSection, setCurrentSection] = useState(0);
-  const totalSections = 4; // Hero, Career, Projects
+  const totalSections = 5; // Hero, Career, Skills, Projects, Footer
   const isScrolling = useRef(false);
 
   useEffect(() => {
     const handleWheel = (e) => {
+      if (document.body.classList.contains('modal-open')) return;
       const el = e.target.closest('.allow-scroll');
       if (el) {
         const isScrollingDown = e.deltaY > 0;
@@ -50,6 +52,7 @@ function App() {
     };
 
     const handleTouchMoveCustom = (e) => {
+      if (document.body.classList.contains('modal-open')) return;
       const touchEndY = e.touches[0].clientY;
       const deltaY = touchStartY - touchEndY; // Positive = swiping UP (scrolling down)
       
@@ -103,9 +106,9 @@ function App() {
 
       <main 
         style={{ 
-          transform: `translateY(-${currentSection * 100}vh)`, 
+          transform: `translateY(${currentSection === 4 ? 'calc(-300vh - 350px)' : `-${currentSection * 100}vh`})`, 
           transition: 'transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1)',
-          height: '400vh', // total height of all sections
+          height: 'calc(400vh + 350px)', // total height of all sections + footer
           width: '100%'
         }}
       >
@@ -120,6 +123,9 @@ function App() {
         </div>
         <div style={{ height: '100vh', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <ProjectList />
+        </div>
+        <div style={{ height: '350px', width: '100%' }}>
+          <Footer />
         </div>
       </main>
 
