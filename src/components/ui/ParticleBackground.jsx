@@ -33,7 +33,10 @@ const ParticleBackground = () => {
         baseY: y,
         baseZ: z,
         theta: theta, // Store angle for clockwise rainbow color
-        length: Math.random() * 0.04 + 0.02
+        length: Math.random() * 0.04 + 0.01,
+        weight: Math.pow(Math.random(), 2) * 4 + 0.5, // Most particles thin, some very thick
+        phase: Math.random() * Math.PI * 2, // Random phase for breathing
+        breathSpeed: Math.random() * 1.5 + 0.5 // Random speed for breathing
       });
     }
 
@@ -171,8 +174,12 @@ const ParticleBackground = () => {
           
           ctx.strokeStyle = `hsl(${hue}, 85%, 55%)`;
           ctx.globalAlpha = opacity;
-          // Thicker line if closer
-          ctx.lineWidth = Math.max(1, 2.5 * scaleInner);
+          
+          // Breathing effect for thickness (oscillates between 0.4 and 1.6)
+          const breath = 1 + Math.sin(time * p.breathSpeed + p.phase) * 0.6;
+          
+          // Vary line width by scale, perspective, individual weight, and breathing
+          ctx.lineWidth = Math.max(0.2, 1.5 * scaleInner * p.weight * breath);
           ctx.lineCap = 'round';
           ctx.stroke();
         }

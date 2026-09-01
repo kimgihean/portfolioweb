@@ -48,15 +48,29 @@ const ProjectModal = ({ project, onClose }) => {
             <h2 className="modal-title">{project.title}</h2>
             <p className="modal-role">{project.role} | {project.period}</p>
             <p className="modal-summary">{project.summary}</p>
-            <div className="modal-tech-stack">
-              {project.techStack.map(tech => (
-                <span key={tech} className="tech-badge">{tech}</span>
-              ))}
-            </div>
+            
+            {project.hashTag && project.hashTag.length > 0 && (
+              <div className="modal-hashtags">
+                {project.hashTag.map(tag => (
+                  <span key={tag} className="modal-hashtag">#{tag}</span>
+                ))}
+              </div>
+            )}
           </div>
         </div>
         
         <div className="modal-body">
+          {project.techStack && project.techStack.length > 0 && (
+            <div className="modal-section">
+              <h3 className="modal-section-title">Tech Stack</h3>
+              <div className="modal-tech-stack">
+                {project.techStack.map(tech => (
+                  <span key={tech} className="tech-badge">{tech}</span>
+                ))}
+              </div>
+            </div>
+          )}
+          
           {project.problem && project.problem !== "..." && (
             <div className="modal-section">
               <h3 className="modal-section-title">Problem</h3>
