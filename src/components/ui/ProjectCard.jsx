@@ -8,6 +8,20 @@ const ProjectCard = ({ project, onClick }) => {
         <h3 className="project-title">{project.title}</h3>
         <p className="project-role">{project.role} | {project.period}</p>
         <p className="project-summary">{project.summary}</p>
+        
+        <div className="project-links" style={{ display: 'flex', gap: '0.8rem', marginTop: '1rem', marginBottom: '0.5rem' }}>
+          {project.websiteLink && (
+            <a href={project.websiteLink} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="card-link-btn">
+              🌐 Website
+            </a>
+          )}
+          {project.notionLink && (
+            <a href={project.notionLink} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="card-link-btn">
+              📝 Notion
+            </a>
+          )}
+        </div>
+
         {project.hashTag && project.hashTag.length > 0 && (
           <div className="project-hashtags">
             {project.hashTag.slice(0, 4).map(tag => (

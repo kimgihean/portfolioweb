@@ -45,6 +45,19 @@ const ProjectModal = ({ project, onClose }) => {
             <p className="modal-role">{project.role} | {project.period}</p>
             <p className="modal-summary">{project.summary}</p>
             
+            <div className="modal-links" style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem' }}>
+              {project.websiteLink && (
+                <a href={project.websiteLink} target="_blank" rel="noopener noreferrer" className="modal-link-btn">
+                  🌐 Visit Website
+                </a>
+              )}
+              {project.notionLink && (
+                <a href={project.notionLink} target="_blank" rel="noopener noreferrer" className="modal-link-btn">
+                  📝 View Notion
+                </a>
+              )}
+            </div>
+
             {project.hashTag && project.hashTag.length > 0 && (
               <div className="modal-hashtags">
                 {project.hashTag.map(tag => (
@@ -70,18 +83,38 @@ const ProjectModal = ({ project, onClose }) => {
           {project.problem && project.problem !== "..." && (
             <div className="modal-section">
               <h3 className="modal-section-title">Problem</h3>
-              <p className="modal-text">{project.problem}</p>
+              <p className="modal-text" dangerouslySetInnerHTML={{ __html: project.problem }} />
+            </div>
+          )}
+
+          {project.keyTasks && project.keyTasks.length > 0 && (
+            <div className="modal-section">
+              <h3 className="modal-section-title">주요 업무</h3>
+              <ul className="modal-list">
+                {project.keyTasks.map((task, idx) => (
+                  <li key={idx} className="modal-list-item" dangerouslySetInnerHTML={{ __html: task }} />
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {project.keyTechs && project.keyTechs.length > 0 && (
+            <div className="modal-section">
+              <h3 className="modal-section-title">주요 기술</h3>
+              <ul className="modal-list">
+                {project.keyTechs.map((tech, idx) => (
+                  <li key={idx} className="modal-list-item" dangerouslySetInnerHTML={{ __html: tech }} />
+                ))}
+              </ul>
             </div>
           )}
           
           {project.solution && project.solution.architecture && project.solution.architecture !== "..." && (
             <div className="modal-section">
               <h3 className="modal-section-title">Solution & Architecture</h3>
-              <p className="modal-text">{project.solution.architecture}</p>
+              <p className="modal-text" dangerouslySetInnerHTML={{ __html: project.solution.architecture }} />
               {project.solution.implementation && project.solution.implementation !== "..." && (
-                <p className="modal-text" style={{ marginTop: '0.5rem' }}>
-                  {project.solution.implementation}
-                </p>
+                <p className="modal-text" style={{ marginTop: '0.5rem' }} dangerouslySetInnerHTML={{ __html: project.solution.implementation }} />
               )}
             </div>
           )}

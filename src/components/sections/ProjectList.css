@@ -38,57 +38,51 @@
 .section-title {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 800;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   color: #ffffff;
   align-self: flex-start;
 }
 
-.bento-grid {
+.projects-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  width: 100%;
+  padding-bottom: 3rem;
+}
+
+.project-category {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.category-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #93c5fd;
+  margin: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.8rem;
+}
+
+.project-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   width: 100%;
 }
 
-/* Bento Item spanning (Desktop - 3 cols) */
-/* Pattern of 5 items: row 1 (2,1), row 2 (1,2), row 3 (3) */
-.bento-grid > .project-card:nth-child(5n + 1),
-.bento-grid > .project-card:nth-child(5n + 4) {
-  grid-column: span 2;
-}
-.bento-grid > .project-card:nth-child(5n) {
-  grid-column: span 3;
-}
-
 /* Responsive constraints */
 @media (max-width: 992px) {
-  .bento-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  /* Reset desktop spans */
-  .bento-grid > .project-card {
-    grid-column: span 1;
-  }
-  
-  /* Pattern of 4 items for Tablet: row 1 (2), row 2 (1,1), row 3 (2) */
-  .bento-grid > .project-card:nth-child(4n + 1),
-  .bento-grid > .project-card:nth-child(4n) {
-    grid-column: span 2;
+  .project-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
   .projects-section {
     padding-top: 10vh;
-  }
-  
-  .bento-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .bento-grid > .project-card {
-    grid-column: span 1 !important;
   }
   
   .section-title {

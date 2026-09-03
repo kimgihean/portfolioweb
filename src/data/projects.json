@@ -11,24 +11,26 @@
         "Node.js",
         "TypeScript",
         "OpenAI API",
+        "Anthropic API",
         "Docker"
       ],
       "solution": {
-        "architecture": "인게임 용어와 게임 문체를 학습 시키기 위해, 형태소 분석 라이브러리를 활용하여 게임 용어를 검색하는 시스템을 구축함.",
-        "implementation": "검색된 데이터와 인게임 문체에 대해 Few Shot prompting을 적용하여 llm이 인게임 용어와 문체를 잘 표현하도록 구현함."
+        "architecture": "인게임 용어와 게임 문체를 학습 시키기 위해, 형태소 분석 AI 기능을 추가하여 게임 용어를 검색하는 시스템을 구축함.",
+        "implementation": "검색된 데이터와 인게임 문체에 대해 <b>Few Shot prompting</b>을 적용하여 llm이 인게임 용어와 문체를 잘 표현하도록 구현함."
       },
       "impact": [
         "필리핀 지사 실무 도입으로 CS 운영 효율 50% 상승",
         "2025년 중소벤처기업부 AI 바우처 사업 수주"
       ],
-      "link": "https://github.com/username/rca-system",
       "image": "/assets/images/rca-system.webp",
       "hashTag": [
-        "AI",
-        "Automation",
-        "LLM",
-        "RAG"
-      ]
+        "AI 서비스",
+        "실무 도입",
+        "자동화"
+      ],
+      "type": "AI",
+      "websiteLink": "",
+      "notionLink": "https://notion.so/portfolio/p1"
     },
     {
       "id": "p2",
@@ -54,46 +56,58 @@
         "동시 접속자 1,000명 이상의 환경에서도 안정적인 3D 객체 상태 업데이트 보장",
         "설비 이상 징후를 실시간 탐지하여 유지보수 비용 15% 절감"
       ],
-      "link": "https://github.com/username/3d-factory",
       "image": "/assets/images/3d-factory.webp",
       "hashTag": [
         "3D",
-        "SmartFactory",
         "RealTime",
         "WebSocket"
-      ]
+      ],
+      "type": "WEB",
+      "websiteLink": "https://example.com/p2",
+      "notionLink": "https://notion.so/portfolio/p2"
     },
     {
       "id": "p3",
-      "title": "사내 맞춤형 지식 검색(LLM) 챗봇",
-      "role": "AI Backend Engineer",
-      "period": "2024.03 - 2024.07",
-      "summary": "방대한 사내 문서를 기반으로 정확한 답변을 제공하는 LLM RAG 기반 챗봇 백엔드 구축",
-      "problem": "기존 키워드 기반 사내 검색 엔진은 관련 문서를 찾는 데 한계가 있었으며, 정보 탐색에 많은 시간이 소요됨.",
+      "title": "[AI] Magic Planner - PoC",
+      "role": "AI 개발 리딩 & 프롬프트 엔지니어링",
+      "period": "2026.04 - 2026.06",
+      "summary": "사용자의 자연어 쿼리를 분석하여 웹서비스 요구사항 정의서와 시스템 아키택처 설계 문서 종합하여 PRD를 추출하는 생성형 AI 기반 크로스 플랫폼 어플리케이션",
+      "problem": "",
       "techStack": [
+        "Rust",
+        "Tauri",
+        "React",
         "Node.js",
-        "Express",
-        "LangChain",
-        "MongoDB",
+        "MySQL",
         "Qdrant",
-        "Redis"
+        "Gemini Embedding",
+        "JsonSplitter",
+        "MarkdownHeaderSplitter"
       ],
       "solution": {
-        "architecture": "문서 청킹(Chunking) 및 임베딩 파이프라인 구축 후, Qdrant 벡터 DB에 저장하여 의미 기반 검색이 가능하도록 설계.",
-        "implementation": "Redis 캐싱을 도입하여 중복 질의에 대한 응답 속도를 극대화하고 토큰 사용 비용 절감."
+        "architecture": "<b>LangGraph 기반 Multi-Agent(A2A) 아키텍처</b>를 도입하여 복잡한 요구사항 분석을 자동 분배·제어하고, <b>자가 평가(Generator & Evaluation Loop)</b>를 통해 기준 미달 시 자동 재생성하는 자율형 에이전트 파이프라인 구축.",
+        "implementation": "<b>Qdrant와 Gemini Embedding</b>을 활용한 고성능 RAG 인프라를 구축하고, Json/Markdown Chunking 전략을 통한 데이터 전처리 최적화 및 유저 수동 보정 로직 구현."
       },
-      "impact": [
-        "사내 임직원 정보 검색 시간 평균 70% 단축",
-        "중복 질의 캐싱으로 LLM API 호출 비용 월 30% 절감",
-        "환각 현상(Hallucination) 방지를 위한 프롬프트 엔지니어링으로 답변 정확도 92% 달성"
+      "keyTasks": [
+        "Multi-Agent 아키텍처 설계 및 AI Orchestration(LangGraph) 구현",
+        "자가 수정 및 평가 기반 AI Agent Pipeline 개발",
+        "RAG(Retrieval-Augmented Generation) 시스템 및 데이터 전처리 파이프라인 구축"
       ],
-      "link": "https://github.com/username/enterprise-rag",
+      "keyTechs": [
+        "Gemini AI API 사용",
+        "AI Orchestration : LangGraph",
+        "A2A 아키택처 적용 : Supervisor Agent 를 통한 Multi Agent 설계 자동화"
+      ],
+      "impact": [],
       "image": "/assets/images/rag-chatbot.webp",
       "hashTag": [
-        "ChatBot",
-        "AI",
-        "VectorDB"
-      ]
+        "AI 서비스",
+        "PoC",
+        "RAG"
+      ],
+      "type": "AI",
+      "websiteLink": "https://example.com/p3",
+      "notionLink": "https://notion.so/portfolio/p3"
     },
     {
       "id": "p4",
@@ -119,13 +133,15 @@
         "서비스 분리로 인한 배포 속도 향상 및 장애 격리(Fault Isolation) 확보",
         "정산 배치 처리 속도 기존 대비 4배 향상"
       ],
-      "link": "https://github.com/username/payment-msa",
       "image": "/assets/images/payment-msa.webp",
       "hashTag": [
         "E-Commerce",
         "Payment",
         "MSA"
-      ]
+      ],
+      "type": "WEB",
+      "websiteLink": "https://example.com/p4",
+      "notionLink": "https://notion.so/portfolio/p4"
     },
     {
       "id": "p5",
@@ -151,13 +167,15 @@
         "일일 500만 건 이상의 이벤트 데이터를 안정적으로 처리",
         "Kibana 연동을 통한 실시간 대시보드 제공으로 마케팅 팀의 의사결정 효율화"
       ],
-      "link": "https://github.com/username/user-analytics",
       "image": "/assets/images/user-analytics.webp",
       "hashTag": [
         "SaaS",
         "Collaboration",
         "Platform"
-      ]
+      ],
+      "type": "WEB",
+      "websiteLink": "https://example.com/p5",
+      "notionLink": "https://notion.so/portfolio/p5"
     },
     {
       "id": "p6",
@@ -178,12 +196,14 @@
       "impact": [
         "..."
       ],
-      "link": "#",
       "image": "",
       "hashTag": [
         "Dummy",
         "Test"
-      ]
+      ],
+      "type": "INFRA",
+      "websiteLink": "https://example.com/p6",
+      "notionLink": "https://notion.so/portfolio/p6"
     },
     {
       "id": "p7",
@@ -204,12 +224,14 @@
       "impact": [
         "..."
       ],
-      "link": "#",
       "image": "",
       "hashTag": [
         "Dummy",
         "Test"
-      ]
+      ],
+      "type": "WEB",
+      "websiteLink": "https://example.com/p7",
+      "notionLink": "https://notion.so/portfolio/p7"
     },
     {
       "id": "p8",
@@ -230,12 +252,14 @@
       "impact": [
         "..."
       ],
-      "link": "#",
       "image": "",
       "hashTag": [
         "Dummy",
         "Test"
-      ]
+      ],
+      "type": "INFRA",
+      "websiteLink": "https://example.com/p8",
+      "notionLink": "https://notion.so/portfolio/p8"
     },
     {
       "id": "p9",
@@ -256,12 +280,14 @@
       "impact": [
         "..."
       ],
-      "link": "#",
       "image": "",
       "hashTag": [
         "Dummy",
         "Test"
-      ]
+      ],
+      "type": "INFRA",
+      "websiteLink": "https://example.com/p9",
+      "notionLink": "https://notion.so/portfolio/p9"
     },
     {
       "id": "p10",
@@ -282,12 +308,14 @@
       "impact": [
         "..."
       ],
-      "link": "#",
       "image": "",
       "hashTag": [
         "Dummy",
         "Test"
-      ]
+      ],
+      "type": "INFRA",
+      "websiteLink": "https://example.com/p10",
+      "notionLink": "https://notion.so/portfolio/p10"
     }
   ]
 }
