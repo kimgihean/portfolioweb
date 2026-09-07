@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CareerSection.css';
 
 const CareerSection = () => {
+  const [isImageRevealed, setIsImageRevealed] = useState(false);
+
   return (
     <section className="career-section" id="career">
       <div className="resume-container">
@@ -17,8 +19,17 @@ const CareerSection = () => {
           
           {/* Column 1: Profile & About */}
           <div className="resume-column">
-            <div className="resume-profile-img">
-              <img src="/assets/images/gihyun.png" alt="Profile Image" />
+            <div 
+              className={`resume-profile-img ${isImageRevealed ? 'revealed' : 'hidden'}`}
+              onClick={() => setIsImageRevealed(true)}
+            >
+              {isImageRevealed ? (
+                <img src="/assets/images/gihyun.png" alt="Profile Image" />
+              ) : (
+                <div className="img-placeholder">
+                  <span>Click to Reveal</span>
+                </div>
+              )}
             </div>
             
             <div className="resume-block">

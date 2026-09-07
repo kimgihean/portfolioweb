@@ -124,7 +124,7 @@ const ProjectModal = ({ project, onClose }) => {
               <h3 className="modal-section-title">Impact</h3>
               <ul className="modal-list">
                 {project.impact.map((item, idx) => (
-                  <li key={idx} className="modal-list-item">{item}</li>
+                  <li key={idx} className="modal-list-item" dangerouslySetInnerHTML={{ __html: item }} />
                 ))}
               </ul>
             </div>

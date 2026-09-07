@@ -40,7 +40,7 @@ const GNB = ({ currentSection, onNavigate }) => {
   ];
 
   return (
-    <nav className={`gnb gnb-side ${isDarkBg ? 'on-dark-bg' : 'on-light-bg'}`}>
+    <nav className={`gnb gnb-side on-dark-bg`}>
       <ul className="gnb-menu">
         {navItems.map((item) => (
           <li 
