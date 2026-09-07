@@ -4,7 +4,7 @@
   justify-content: flex-start;
   align-items: center;
   padding: 3.5% 5% 5% 5%;
-  background: radial-gradient(circle at 50% 50%, #0a1128 0%, #03050a 100%);
+  background: transparent;
   color: #ffffff;
   height: 100vh; /* Use fixed height to constrain viewport */
   overflow-y: auto; /* Allow internal scrolling */

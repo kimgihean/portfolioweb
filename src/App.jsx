@@ -101,6 +101,13 @@ function App() {
   return (
     <div className="app-container" style={{ overflow: 'hidden', height: '100vh', width: '100vw', position: 'relative' }}>
       
+      {/* Ambient Glow Background */}
+      <div className="ambient-background">
+        <div className="ambient-blob primary"></div>
+        <div className="ambient-blob secondary"></div>
+        <div className="ambient-blob tertiary"></div>
+      </div>
+
       {/* Dynamic GNB */}
       <GNB currentSection={currentSection} onNavigate={(index) => setCurrentSection(index)} />
 

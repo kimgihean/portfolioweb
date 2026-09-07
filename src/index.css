@@ -70,3 +70,69 @@ body {
   40% { transform: translateY(-8px) rotate(45deg); }
   60% { transform: translateY(-4px) rotate(45deg); }
 }
+
+/* Ambient Glow Background */
+.ambient-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-color: #0b1121; /* Dark navy base */
+  overflow: hidden;
+}
+
+.ambient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.6;
+  animation: float-blob 20s infinite ease-in-out alternate;
+}
+
+.ambient-blob.primary {
+  width: 60vw;
+  height: 60vw;
+  max-width: 800px;
+  max-height: 800px;
+  background: rgba(59, 130, 246, 0.4); /* Blue */
+  top: -20%;
+  left: -10%;
+  animation-delay: 0s;
+}
+
+.ambient-blob.secondary {
+  width: 50vw;
+  height: 50vw;
+  max-width: 600px;
+  max-height: 600px;
+  background: rgba(139, 92, 246, 0.3); /* Purple */
+  bottom: -10%;
+  right: -10%;
+  animation-delay: -5s;
+}
+
+.ambient-blob.tertiary {
+  width: 40vw;
+  height: 40vw;
+  max-width: 500px;
+  max-height: 500px;
+  background: rgba(16, 185, 129, 0.2); /* Emerald */
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -10s;
+}
+
+@keyframes float-blob {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(5%, 10%) scale(1.1);
+  }
+  100% {
+    transform: translate(-5%, -5%) scale(0.95);
+  }
+}
