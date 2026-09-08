@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Bot } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 import './AIChatbot.css';
 
 const AIChatbot = () => {
@@ -26,15 +27,21 @@ const AIChatbot = () => {
     scrollToBottom();
   }, [messages, isLoading]);
 
-  const handleCustomSubmit = async (e) => {
-    e.preventDefault();
-    if (!myInput || !myInput.trim() || isLoading) return;
+  const SUGGESTED_QUESTIONS = [
+    "주요 기술 스택이 뭐야?",
+    "어떤 프로젝트를 진행했어?",
+    "클라우드 인프라 최적화 경험을 알려줘"
+  ];
+
+  const sendMessageToAI = async (text) => {
+    if (!text || !text.trim() || isLoading) return;
     
-    const userMessage = { id: Date.now().toString(), role: 'user', content: myInput };
+    const userMessage = { id: Date.now().toString(), role: 'user', content: text };
+    // 최신 상태를 반영하기 위해 함수형 업데이트가 아니더라도, 
+    // isLoading 플래그가 동시 전송을 막아주므로 messages 클로저를 사용해도 안전합니다.
     const newMessages = [...messages, userMessage];
     
     setMessages(newMessages);
-    setMyInput('');
     setIsLoading(true);
 
     const assistantMessageId = (Date.now() + 1).toString();
@@ -101,6 +108,13 @@ const AIChatbot = () => {
     }
   };
 
+  const handleCustomSubmit = (e) => {
+    e.preventDefault();
+    const text = myInput;
+    setMyInput('');
+    sendMessageToAI(text);
+  };
+
   const handleWheel = (e) => {
     e.stopPropagation();
     if (e.nativeEvent && e.nativeEvent.stopImmediatePropagation) {
@@ -136,7 +150,21 @@ const AIChatbot = () => {
             return (
               <div key={msg.id} className={`message-wrapper ${msg.role === 'user' ? 'user' : 'ai'}`}>
                 <div className={`message-bubble ${msg.role === 'user' ? 'user' : 'ai'}`}>
-                  {textContent}
+                  <ReactMarkdown>{textContent}</ReactMarkdown>
+                  {msg.id === 'welcome' && (
+                    <div className="suggested-questions">
+                      {SUGGESTED_QUESTIONS.map(q => (
+                        <button 
+                          key={q} 
+                          className="suggested-btn" 
+                          onClick={() => sendMessageToAI(q)}
+                          disabled={isLoading}
+                        >
+                          {q}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             );
