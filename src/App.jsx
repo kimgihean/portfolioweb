@@ -5,6 +5,7 @@ import SkillsSection from './components/sections/SkillsSection';
 import ProjectList from './components/sections/ProjectList';
 import Footer from './components/ui/Footer';
 import GNB from './components/ui/GNB';
+import AIChatbot from './components/ui/AIChatbot';
 
 function App() {
   const [currentSection, setCurrentSection] = useState(0);
@@ -143,6 +144,9 @@ function App() {
           <div className="scroll-arrow"></div>
         </div>
       )}
+
+      {/* AI Chatbot Widget */}
+      <AIChatbot />
     </div>
   );
 }
