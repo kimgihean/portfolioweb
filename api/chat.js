@@ -42,7 +42,7 @@ const gihyunData = {
       ],
       "type": "AI",
       "websiteLink": "",
-      "notionLink": "https://notion.so/portfolio/p1"
+      "notionLink": ""
     },
     {
       "id": "p2",
@@ -75,7 +75,7 @@ const gihyunData = {
       ],
       "type": "WEB",
       "websiteLink": "https://cookierunbraverse.com/",
-      "notionLink": "https://notion.so/portfolio/p2"
+      "notionLink": ""
     },
     {
       "id": "p3",
@@ -118,7 +118,7 @@ const gihyunData = {
       ],
       "type": "AI",
       "websiteLink": "",
-      "notionLink": "https://notion.so/portfolio/p3"
+      "notionLink": ""
     },
     {
       "id": "p4",
@@ -157,7 +157,7 @@ const gihyunData = {
       ],
       "type": "WEB",
       "websiteLink": "https://webshop.joycity.com",
-      "notionLink": "https://notion.so/portfolio/p4"
+      "notionLink": ""
     },
     {
       "id": "p5",
@@ -196,7 +196,7 @@ const gihyunData = {
       ],
       "type": "WEB",
       "websiteLink": "https://example.com/p5",
-      "notionLink": "https://notion.so/portfolio/p5"
+      "notionLink": ""
     },
     {
       "id": "p6",

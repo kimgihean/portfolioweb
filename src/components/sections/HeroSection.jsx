@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { ExternalLink } from 'lucide-react';
 import { gsap } from 'gsap';
 import './HeroSection.css';
 
@@ -117,11 +118,11 @@ const HeroSection = () => {
           </div>
           
           <div className="terminal-buttons">
-            <a href="#" target="_blank" rel="noopener noreferrer" className="hero-btn neon-blue">
-              Notion Resume
+            <a href="https://my.surfit.io/w/770906581" target="_blank" rel="noopener noreferrer" className="hero-btn neon-blue" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+              Resume <ExternalLink size={16} />
             </a>
-            <a href="https://github.com/kimgihean" target="_blank" rel="noopener noreferrer" className="hero-btn neon-green">
-              GitHub Profile
+            <a href="https://github.com/kimgihean" target="_blank" rel="noopener noreferrer" className="hero-btn neon-green" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+              GitHub <ExternalLink size={16} />
             </a>
           </div>
         </div>
