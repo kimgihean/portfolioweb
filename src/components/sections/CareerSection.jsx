@@ -71,14 +71,14 @@ const CareerSection = () => {
                   <span className="list-text">가천대학교 창업 코코네 스쿨 개발팀 근무</span>
                 </li>
                 <li>
-                  <span className="list-year">2023~25</span>
+                  <span className="list-year">2023.11 ~</span>
                   <span className="list-text">게임덱스 웹서비스팀 개발팀 사원</span>
                 </li>
                 <li>
                   <span className="list-year">2025</span>
                   <span className="list-text">게임덱스 AI TF 개발 리딩</span>
                 </li>
-                <li>
+                <li className="highlight-item">
                   <span className="list-year">2025~현재</span>
                   <span className="list-text">게임덱스 웹서비스팀 BE 파트 파트장</span>
                 </li>
